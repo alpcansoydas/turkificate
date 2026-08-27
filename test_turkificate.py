@@ -113,8 +113,9 @@ class TestNormalizers:
 
     def test_technology_terms(self):
         assert turkificate.normalize_technology_terms("AI, LLM, API ve GraphQL") == (
-            "ey ay, el el em, ey pi ay ve graf kyu el"
+            "eay, el el em, ey pi ay ve graf kyu el"
         )
+        assert turkificate.normalize_technology_terms("AGI") == "ey ci ay"
         assert turkificate.normalize_technology_terms("FP16, T5 ve K8s") == (
             "ef pi on altı, ti fayv ve key eyt es"
         )
